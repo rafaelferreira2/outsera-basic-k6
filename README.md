@@ -1,19 +1,20 @@
 # [Outsera] Testes de performance com k6 
 
-## Para uma execução com acompanhamento em tempo real, executar o comando de exemplo:
+
+### Para uma execução com acompanhamento em tempo real, executar o comando de exemplo:
 
 ```sh
-K6_WEB_DASHBOARD=true K6_WEB_DASHBOARD_PERIOD=2s K6_WEB_DASHBOARD_EXPORT=./reports/graphic-report.html K6_WEB_DASHBOARD_OPEN=true k6 run desafio.js
+k6 run --out web-dashboard=export=reports\graphic-report.html .\desafio.js
 ```
+![poster](./images/execucao.png)
 
-Ou acessar a seguinte URL durante a execução:
+### E acessar a seguinte URL durante a execução:
 http://127.0.0.1:5665/ui/?endpoint=/
+![poster](./images/live_report.png)
 
-## Para uma execução onde é apenas gerado um report em html:
 
-```sh
-K6_WEB_DASHBOARD=true K6_WEB_DASHBOARD_PERIOD=2s K6_WEB_DASHBOARD_EXPORT=./reports/report_performance_test.html k6 run desafio.js
-```
+### Report em html será gerado ao fim da execução na pasta /reports
+
 
 ## Análise sobre o relatório anexado [AQUI](./reports/graphic-report.html):
 - API teve uma vazão de pouco mais de 128 mil requisições
